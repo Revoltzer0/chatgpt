@@ -1,0 +1,92 @@
+Legal! Vamos fazer uma introdução ao mundo da programação e, especificamente, como trabalhar com strings (que são textos) no Python. Vamos resolver um problema simples: verificar se um caractere está presente em uma frase.
+
+Passo a passo do problema:
+Entradas: O programa deve pedir duas informações ao usuário:
+
+Uma frase (que é uma sequência de palavras ou caracteres).
+Um caractere (pode ser qualquer letra, número ou símbolo).
+Processamento: Vamos usar o operador de associação in, que permite verificar se um elemento (neste caso, o caractere) está presente em uma lista ou string (a frase).
+
+Saída: O programa deve informar se o caractere aparece na frase ou não.
+
+Vamos ao código e à explicação linha por linha!
+python
+Copiar código
+# Pedimos para o usuário digitar uma frase
+frase = input("Digite uma frase: ")
+
+# Pedimos para o usuário digitar um caractere
+caractere = input("Digite um caractere: ")
+
+# Usamos o operador 'in' para verificar se o caractere está na frase
+if caractere in frase:
+    # Se o caractere estiver na frase, mostramos uma mensagem dizendo que ele foi encontrado
+    print(f"O caractere '{caractere}' está presente na frase.")
+else:
+    # Se o caractere não estiver na frase, mostramos uma mensagem dizendo que ele não foi encontrado
+    print(f"O caractere '{caractere}' NÃO está presente na frase.")
+Explicando cada parte:
+Entrada de dados:
+
+python
+Copiar código
+frase = input("Digite uma frase: ")
+Aqui usamos a função input() para pedir uma frase ao usuário. O input() sempre retorna um texto. O texto que o usuário digitar será armazenado na variável chamada frase.
+
+Entrada do caractere:
+
+python
+Copiar código
+caractere = input("Digite um caractere: ")
+O mesmo acontece aqui, mas agora estamos pedindo um caractere ao usuário. Ele também será armazenado como uma string na variável caractere. Mesmo que seja um único caractere, ele é tratado como um texto.
+
+Verificação usando o operador in:
+
+python
+Copiar código
+if caractere in frase:
+Aqui usamos o operador in, que verifica se um elemento (o caractere) está presente em uma sequência (a frase). Se o caractere estiver na frase, a expressão retorna True, e o código dentro do bloco if será executado.
+
+Exibição da mensagem:
+
+python
+Copiar código
+print(f"O caractere '{caractere}' está presente na frase.")
+Aqui usamos uma f-string. A f-string é uma forma de incluir variáveis dentro de uma string de forma clara e direta. O f antes das aspas indica que dentro da string pode haver variáveis. O que estiver entre {} será substituído pelo valor da variável correspondente. Por exemplo, se o usuário digitou "a", a mensagem será "O caractere 'a' está presente na frase."
+
+Bloco else:
+
+python
+Copiar código
+else:
+    print(f"O caractere '{caractere}' NÃO está presente na frase.")
+Se o caractere não estiver na frase, a condição if será falsa, e o código dentro do bloco else será executado. Aqui, mostramos que o caractere não foi encontrado.
+
+Sugestões de melhorias:
+Agora que entendemos o básico, sempre sugiro que pensemos em como esse código pode ser melhorado, especialmente se estivéssemos aplicando em um cenário do mundo real, como em um sistema que processa informações de usuários ou busca dados em grandes bases de textos. Algumas ideias:
+
+Tratamento de maiúsculas e minúsculas: E se o usuário digitar a frase com letras maiúsculas e o caractere com letras minúsculas? No mercado de trabalho, sistemas precisam ser robustos para essas situações. Podemos melhorar o código para ignorar diferenças de maiúsculas e minúsculas.
+
+python
+Copiar código
+if caractere.lower() in frase.lower():
+Aqui, usamos o método lower() para converter tudo para letras minúsculas antes de comparar. Dessa forma, "A" e "a" serão considerados iguais.
+
+Verificação de múltiplos caracteres: E se o usuário acidentalmente digitar mais de um caractere na segunda entrada? Para garantir que ele digite apenas um, podemos adicionar uma verificação:
+
+python
+Copiar código
+if len(caractere) != 1:
+    print("Por favor, digite apenas um caractere.")
+else:
+    if caractere in frase:
+        print(f"O caractere '{caractere}' está presente na frase.")
+    else:
+        print(f"O caractere '{caractere}' NÃO está presente na frase.")
+Agora o programa vai verificar se o tamanho do texto digitado é maior que 1 e avisar o usuário para corrigir.
+
+Essas melhorias refletem boas práticas de programação que são muito valorizadas no mercado de trabalho, como tratar exceções e validar entradas, tornando o sistema mais confiável.
+
+Espero que tenha ficado claro até aqui! Vamos agora experimentar fazer pequenas modificações e ver como o código se comporta com entradas diferentes. Isso ajuda muito na hora de aprender!
+
+Dúvidas?
